@@ -66,7 +66,7 @@ export function WetsuitSilhouette({
       {/* ---- Legs ---- */}
       {/* Short core legs (always present) */}
       <path
-        d="M78 196 q-4 24 -6 44 l-3 26 q10 5 20 0 l4 -30 q3 30 7 -0 l4 30 q10 5 20 0 l-3 -26 q-2 -20 -6 -44 z"
+        d="M78 196 q-4 24 -6 44 l-3 26 q10 5 20 0 l4 -30 q3 -12 7 0 l4 30 q10 5 20 0 l-3 -26 q-2 -20 -6 -44 z"
         fill="url(#suitBody)"
         stroke={accent}
         strokeOpacity="0.25"

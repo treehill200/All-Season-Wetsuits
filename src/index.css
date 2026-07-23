@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ocean-black: #05080b;
+  --deep-navy: #071a2c;
+  --ocean-blue: #0d3553;
+  --ice-blue: #9ed8e8;
+  --seafoam: #b8d9d1;
+  --off-white: #f3f1eb;
+  --gold: #c9a85d;
+  color-scheme: dark;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--ocean-black);
+  color: var(--off-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* Hide native cursor only when custom cursor active (pointer devices) */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: auto !important;
+  }
+}
+
+/* Editorial typography helpers */
+.font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+.font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.tech-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  color: var(--seafoam);
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(158, 216, 232, 0.35),
+    transparent
+  );
+}
+
+/* Focus visibility for accessibility */
+:focus-visible {
+  outline: 2px solid var(--ice-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Custom range slider baseline (progressive enhancement per component) */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ocean-black);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 53, 83, 0.9);
+  border-radius: 20px;
+  border: 2px solid var(--ocean-black);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ocean-blue);
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 168, 93, 0.3);
+  color: var(--off-white);
+}
+
+/* Grain / caustic overlays are handled in components */
+.text-shadow-soft {
+  text-shadow: 0 2px 40px rgba(5, 8, 11, 0.8);
+}
+
+.glass-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 26, 44, 0.55),
+    rgba(5, 8, 11, 0.65)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(158, 216, 232, 0.12);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
